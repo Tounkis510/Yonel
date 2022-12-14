@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -17,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { TransactionComponent } from './transaction/transaction.component';
     HomeComponent,
     HomeAgentComponent,
     TransactionComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { TransactionComponent } from './transaction/transaction.component';
     BrowserAnimationsModule,
     MatGridListModule,
     MatInputModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

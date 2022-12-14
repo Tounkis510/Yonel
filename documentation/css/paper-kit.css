@@ -1504,7 +1504,7 @@ textarea.form-control {
 
 .popover.bs-tether-element-attached-top::after, .popover.popover-bottom::after,
 .popover.bs-tether-element-attached-top::before, .popover.popover-bottom::before {
-  border-bottom-color: #FF8F5E !important;
+  border-bottom-color: #f5593d !important;
   top: -9px;
 }
 
@@ -2646,7 +2646,7 @@ textarea.form-control {
 }
 
 .card-register {
-  background-color: #FF8F5E;
+  background-color: #f5593d;
   border-radius: 8px;
   color: #fff;
   max-width: 350px;
@@ -3708,10 +3708,10 @@ textarea.form-control {
   background-color: transparent;
 }
 .nav-tabs .nav-item .nav-link:hover {
-  color: #66615b;
+  color: #f5593d;
 }
 .nav-tabs .nav-item .nav-link.active {
-  color: #66615b;
+  color: #f5593d;
 }
 .nav-tabs .nav-item {
   color: #66615b;
@@ -4963,7 +4963,7 @@ textarea.form-control {
   }
 
   .fixed-top .navbar-collapse {
-    background-color: #FF8F5E;
+    background-color: #f5593d;
     float: left;
   }
 

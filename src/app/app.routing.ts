@@ -11,12 +11,14 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { HomeComponent } from './home/home.component';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: HomeComponent },
     { path: 'transaction',      component: TransactionComponent },
     { path: 'home-agent',       component: HomeAgentComponent },
+    { path: 'admin',            component: AdminComponent },
     { path: 'component',        component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },

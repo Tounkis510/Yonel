@@ -27,7 +27,31 @@
                 </ngb-tab>
                 <ngb-tab title="Historique des transactions">
                     <ng-template ngbTabContent>
-                        <p>Here is your profile.</p>
+                        <mat-accordion>
+                            <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                12/06/2022
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Transaction numéro 1
+                            </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p></p>
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    07/12/2022
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Transaction numéro 2
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p></p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
                     </ng-template>
                 </ngb-tab>
                 <ngb-tab title="Notification">
