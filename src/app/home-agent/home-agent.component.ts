@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home-agent',
@@ -13,5 +14,21 @@ export class HomeAgentComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // userForm = new FormGroup({
+  //   'login':new FormControl('',Validators.required),
+  //    'password':new FormControl('',Validators.required),
+  //  });
+ 
+  //  userSubmit(){  
+     
+  //    this.service.Connect(this.userForm.value).subscribe((res)=>{
+  //      console.log(res,'res==>');
+  //      var id=res.data[0].idUser;
+  //      if (res.data.length>0){}
+  //      else{
+  //      }
+  //      window.location.href="http://localhost:4200/#/transaction";
+  //    });
+  //  }
 
 }

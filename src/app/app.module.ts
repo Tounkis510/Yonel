@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app.routing';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -48,6 +49,7 @@ import { AdminComponent } from './admin/admin.component';
     MatExpansionModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTabsModule,
 
   ],
   providers: [

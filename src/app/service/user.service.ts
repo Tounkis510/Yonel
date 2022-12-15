@@ -13,7 +13,7 @@ export class UserService {
     return this.httpUser.get('http://127.0.0.1:3000/api/user/');
   }
   Connect(data:any):Observable<any>{//Authentification
-    return this.httpUser.post(`http://127.0.0.1:3000/connect`,data)
+    return this.httpUser.get(`http://127.0.0.1:3000/api/user/connect`,data)
     .pipe(map(user=>{
   
       localStorage.setItem("currentUser",JSON.stringify(user)); 
