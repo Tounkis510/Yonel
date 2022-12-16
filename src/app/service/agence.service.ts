@@ -5,10 +5,13 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionService {
+export class AgenceService {
 
   constructor(public httpUser:HttpClient) { }
-  getAllTransaction():Observable<any>{
-    return this.httpUser.get('http://127.0.0.1:3000/api/transaction/');
+  getAllAgence():Observable<any>{
+    return this.httpUser.get('http://127.0.0.1:3000/api/agence');
+  }
+  CreateAgence(data:any):Observable<any>{
+    return this.httpUser.post('http://127.0.0.1:3000/api/agence',data);
   }
 }

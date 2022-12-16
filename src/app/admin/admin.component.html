@@ -1,5 +1,129 @@
-<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-menu-icon" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    <span class="navbar-toggler-icon"></span>
-    <span class="navbar-toggler-icon"></span>
-</button>
+<div class="section section-image section-login content" style="background-image: url('assets/img/yonel4.jpg');">
+    <div class="container title titre">
+        <img src="../../assets/img/yonel.png">
+    </div>
+</div>
+<div class="col-md-6 menu">
+    <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+            <ngb-tabset [justify]="'center'">
+                <ngb-tab title="Enregistrement">
+                    <ng-template ngbTabContent>
+                        <div >
+                            <form class="form">
+                                <div class="bordure"><h2>Enregistrer une Agence</h2>
+                                <form [formGroup]="userForm1" (ngSubmit)="userSubmit1()">
+                                <div class="form-group">
+                                    Code Agence<input name="code_agence" formControlName="code_agence" type="text" class="form-control input" placeholder="Code Agence ">
+                                    Nom Agence<input name="nom_agence" formControlName="nom_agence" type="text" class="form-control input" placeholder="Nom Agence ">
+                                    Statut Agence<input name="statut_agence" formControlName="statut_agence" type="text" class="form-control input" placeholder="Statut Agence ">
+                                    <button name="valider" style="margin-top:13px" type="submit" class="btn btn-danger page-scroll bouton">Enregistrer</button>
+                                </div>
+                                </form>
+                                </div>
+
+                                <div class="bordure"><h2>Enregistrer une Sous-Agence</h2>
+                                <form [formGroup]="userForm4" (ngSubmit)="userSubmit4()">
+                                    <div class="form-group">
+                                        Code Sous-Agence<input name="code_sous_agence" formControlName="code_sous_agence" type="text" class="form-control input" placeholder="Code Sous-Agence ">
+                                        Nom Sous-Agence<input name="nom_sous_agence" formControlName="nom_sous_agence" type="text" class="form-control input" placeholder="Nom Sous-Agence ">
+                                        Adresse Sous-Agence<input name="adresse_sous_agence" formControlName="adresse_sous_agence" type="text" class="form-control input" placeholder="Adresse Sous-Agence ">
+                                        City Sous-Agence<input name="city_sous_agence" formControlName="city_sous_agence" type="text" class="form-control input" placeholder="City Sous-Agence ">
+                                        Country Sous-Agence<input name="country_sous_agence" formControlName="country_sous_agence" type="text" class="form-control input" placeholder="Country Sous-Agence ">
+                                        Phone Sous-Agence<input name="phone_sous_agence" formControlName="phone_sous_agence" type="text" class="form-control input" placeholder="Phone Sous-Agence ">
+                                        Email Sous-Agence<input name="email_sous_agence" formControlName="text" type="text" class="form-control input" placeholder="Email Sous-Agence ">
+                                        Agence de Référence<input name="agenceId" type="number " formControlName="agenceId" class="form-control input" placeholder="Agence de Référence">
+                                        <button name="valider" style="margin-top:13px" type="submit" class="btn btn-danger page-scroll bouton">Enregistrer</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="bordure"><h2>Enregistrer un client</h2>
+                                <form [formGroup]="userForm3" (ngSubmit)="userSubmit3()">
+                                    <div class="form-group">
+                                        Nom Client<input name="nom_client" formControlName="nom_client" type="text" class="form-control input" placeholder="">
+                                        Prénom Client<input name="prenom_client" formControlName="prenom_client" type="text" class="form-control input" placeholder="">
+                                        Date de Naissance Client<input name="date_naiss_client" formControlName="date_naiss_client" type="date" class="form-control input" placeholder="">
+                                        Lieu de Naissance Client<input name="lieu_naiss_client" formControlName="lieu_naiss_client" type="text" class="form-control input" placeholder="">
+                                        Email Client<input name="email_client" type="text" formControlName="email_client" class="form-control input" placeholder="">
+                                        Rôle<input name="role" type="text" formControlName="role" class="form-control input" placeholder="">
+                                        Phone Client<input name="phone_client" formControlName="phone_client" type="text" class="form-control input" placeholder="">
+                                        <button name="valider" style="margin-top:13px" type="submit" class="btn btn-danger page-scroll bouton">Enregistrer</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="bordure"><h2>Enregistrer un utilisateur</h2>
+                                <form [formGroup]="userForm2" (ngSubmit)="userSubmit2()">
+                                    <div class="form-group">
+                                        Login<input name="login" formControlName="login" type="text" class="form-control input" placeholder="">
+                                        Password<input name="password" formControlName="password" type="password" class="form-control input" placeholder="">
+                                        Key<input name="key" formControlName="key" type="text" class="form-control input" placeholder="">
+                                        Agence<input name="sousAgenceId" formControlName="sousAgenceId" type="number" class="form-control input" placeholder="">
+                                        <button name="valider" style="margin-top:13px" type="submit" class="btn btn-danger page-scroll bouton">Enregistrer</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </form>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Liste">
+                    <ng-template ngbTabContent>
+                        <mat-accordion>
+                            <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                -
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Liste des Utilisateurs
+                            </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <table>
+                            <tr *ngFor='let us of readDataUsers;' class="t"><td>User {{us.login}}</td>
+                                <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Modifier</a></td>
+                                <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Supprimer</a></td>
+                            </tr>
+                            </table>
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    -
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Liste des Clients
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <table>
+                                <tr *ngFor='let us of readDataClient;' class="t"><td>User {{us.prenom_client}} {{us.nom_client}}</td>
+                                    <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Modifier</a></td>
+                                    <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Supprimer</a></td>
+                                </tr>
+                            </table>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    -
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Liste des Agences
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <table>
+                                <tr *ngFor='let us of readDataAgence;' class="t"><td>Agence {{us.nom_agence}}</td>
+                                    <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Modifier</a></td>
+                                    <td><a [routerLink]="['']" class="btn " style="background-color: white; color: #f5593d; border: solid 1px white;">Supprimer</a></td>
+                                </tr>
+                            </table>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>

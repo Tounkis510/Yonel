@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AdminComponent } from './admin/admin.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AdminComponent } from './admin/admin.component';
     HomeAgentComponent,
     TransactionComponent,
     AdminComponent,
+    PaiementComponent,
     
   ],
   imports: [

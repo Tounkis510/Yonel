@@ -1,4 +1,28 @@
-.section{
+.titre{
+    margin-left: 350px;
+    margin-top: 150px; 
+}
+.menu{
     margin-left: auto;
     margin-right: auto;
+}
+
+.input{
+    background-color: white;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px #f5593d;
+    margin-bottom: 10px;
+}
+.bordure{
+    border: solid 2px #f5593d;
+    margin-bottom: 15px;
+}
+.h{
+    background-color: #f5593d;
+    border: solid 1px white
+}
+.t{
+    height: 50px;
 }

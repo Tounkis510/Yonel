@@ -18,7 +18,7 @@
                         <div >
                             <form>
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-danger page-scroll bouton" routerLink="../transaction">Faire un retrait</button>
+                                    <button type="button" class="btn btn-danger page-scroll bouton" routerLink="../paiement">Faire un retrait</button>
                                 </div>
                             </form>
                         </div>
@@ -26,29 +26,19 @@
                 </ngb-tab>
                 <ngb-tab title="Historique des transactions">
                     <ng-template ngbTabContent>
-                        <mat-accordion>
+                        <mat-accordion *ngFor='let us of readDataTransaction;'>
                             <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                12/06/2022
+                                {{us.date_envoie | date:"dd/MM/Y"}}
                             </mat-panel-title>
                             <mat-panel-description>
-                                Transaction numéro 1
+                                Transaction numéro {{us.id}} 
                             </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p></p>
-                        </mat-expansion-panel>
-
-                        <mat-expansion-panel class="h" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    07/12/2022
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                    Transaction numéro 2
-                                </mat-panel-description>
-                            </mat-expansion-panel-header>
-                            <p></p>
+                            <p>montant Transaction: {{us.montant_recevoir}} FCFA</p>
+                            <p>frais: {{us.frais}} FCFA</p>
+                            <p>montant total: {{us.montant_total}} FCFA</p>
                         </mat-expansion-panel>
                     </mat-accordion>
                     </ng-template>

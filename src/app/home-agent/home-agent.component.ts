@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { TransactionService } from 'app/service/transaction.service';
 
 @Component({
   selector: 'app-home-agent',
@@ -9,10 +10,18 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
   styleUrls: ['./home-agent.component.css']
 })
 export class HomeAgentComponent implements OnInit {
+  readDataTransaction: any;
+  Transaction: any;
 
-  constructor(private routes: Router) { }
+  constructor(private routes: Router, private service:TransactionService) { }
 
   ngOnInit(): void {
+    this.service.getAllTransaction().subscribe((res)=>{
+      console.log(res,'res==>');
+      this.readDataTransaction=res.data;
+      this.Transaction=res.data[0].frais
+      
+    });
   }
   // userForm = new FormGroup({
   //   'login':new FormControl('',Validators.required),

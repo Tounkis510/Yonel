@@ -12,33 +12,32 @@ export class HomeComponent implements OnInit {
   readDataUser: any;
   User: any;
   showMsg: number;
-  mdp:any='tks'
-  login:any='BT'
+  mdp:any='tks';
+  login:any='BT';
+  n: number=2;
+  id: any;
 
   constructor(private service: UserService ) { }
 
   ngOnInit(): void {
-    this.service.getAllUsers().subscribe((res)=>{
-      console.log(res,'res==>');
-      this.readDataUser=res.data;
-      
-    });
   }
+  
   userForm = new FormGroup({
     'login':new FormControl('',Validators.required),
-     'password':new FormControl('',Validators.required),
+     'mdp':new FormControl('',Validators.required),
    });
  
    userSubmit(){  
      
      this.service.Connect(this.userForm.value).subscribe((res)=>{
        console.log(res,'res==>');
-       var id=res.data[0].idUser;
-       if (res.data.length>0){
-       this.showMsg=1;}
-       else{
-       this.showMsg=2}
-       window.location.href="http://localhost:4200/#/home-agent";
+       console.log(this.userForm.value)
+       this.id=res.data[0].id
+       if(this.id==100){
+        window.location.href="http://localhost:4200/#/admin";
+       }else{
+        window.location.href="http://localhost:4200/#/home-agent";
+       }
      });
     }
 
