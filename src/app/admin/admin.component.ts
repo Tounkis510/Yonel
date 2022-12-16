@@ -36,7 +36,6 @@ export class AdminComponent implements OnInit {
     'code_agence':new FormControl('',Validators.required),
     'nom_agence':new FormControl('',Validators.required),
     'statut_agence':new FormControl('',Validators.required),
-    'login':new FormControl('',Validators.required),
   });
   userForm2 = new FormGroup({
     'login':new FormControl('',Validators.required),
@@ -50,7 +49,7 @@ export class AdminComponent implements OnInit {
     'date_naiss_client':new FormControl('',Validators.required),
     'lieu_naiss_client':new FormControl('',Validators.required),
     'email_client':new FormControl('',Validators.required),
-    'role':new FormControl('',Validators.required),
+    'role_client':new FormControl('',Validators.required),
     'phone_client':new FormControl('',Validators.required),
   });
   userForm4 = new FormGroup({

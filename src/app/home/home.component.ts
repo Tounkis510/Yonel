@@ -14,12 +14,18 @@ export class HomeComponent implements OnInit {
   showMsg: number;
   mdp:any='tks';
   login:any='BT';
-  n: number=2;
+  n: boolean=true;
   id: any;
 
   constructor(private service: UserService ) { }
 
   ngOnInit(): void {
+    
+  }
+  clickMethod() {
+    if(confirm("Champs vide, Veuillez saisir un login et un mot de passe")) {
+      console.log("Implement delete functionality here");
+    }
   }
   
   userForm = new FormGroup({
@@ -28,7 +34,9 @@ export class HomeComponent implements OnInit {
    });
  
    userSubmit(){  
-     
+    if((!this.userForm.value.login || !this.userForm.value.mdp) || (!this.userForm.value.login && !this.userForm.value.mdp) ){
+    this.clickMethod();}
+    else{
      this.service.Connect(this.userForm.value).subscribe((res)=>{
        console.log(res,'res==>');
        console.log(this.userForm.value)
@@ -38,24 +46,11 @@ export class HomeComponent implements OnInit {
        }else{
         window.location.href="http://localhost:4200/#/home-agent";
        }
+      //  this.clickMethod('name')
      });
     }
+  }
 
-  userForm = new FormGroup({
-    'login':new FormControl('',Validators.required),
-     'paseword':new FormControl('',Validators.required),
-   });
- 
-   userSubmit(){  
-     
-    //  this.service.getOneUsers(this.userForm.value).subscribe((res)=>{
-    //    console.log(res,'res==>');
-    //    var id=res.data[0].idUser;
-    //    if (res.data.length>0){
-    //    this.showMsg=1;}
-    //    else{
-    //    this.showMsg=2}
-    //    window.location.href="http://localhost:4200/home/"+id;
-     };
+  
 
 }
