@@ -13,15 +13,14 @@
     <div class="nav-tabs-navigation">
         <div class="nav-tabs-wrapper">
             <ngb-tabset [justify]="'center'">
-                <ngb-tab title="Transaction">
+                <ngb-tab title="Retrait">
                     <ng-template ngbTabContent>
                         <div >
-                            <div>Vérifier la validité du code de la transaction</div>
-                            <div class="form-group">
-                                <i _ngcontent-dda-c146="" class="nc-icon nc-key-25"></i>
-                                <input type="text" class="form-control input" placeholder="Renseigner le code de la transaction">
-                                <button type="button" class="btn btn-danger page-scroll bouton" routerLink="../transaction">Vérifier</button>
-                            </div>
+                            <form>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-danger page-scroll bouton" routerLink="../transaction">Faire un retrait</button>
+                                </div>
+                            </form>
                         </div>
                     </ng-template>
                 </ngb-tab>
@@ -54,9 +53,13 @@
                     </mat-accordion>
                     </ng-template>
                 </ngb-tab>
-                <ngb-tab title="Notification">
+                <ngb-tab title="Envoie">
                     <ng-template ngbTabContent>
-                        <p>Here are your messages.</p>
+                        <form>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-danger page-scroll bouton" routerLink="../transaction">Faire une transaction</button>
+                            </div>
+                        </form>
                     </ng-template>
                 </ngb-tab>
             </ngb-tabset>

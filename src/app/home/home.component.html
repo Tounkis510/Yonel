@@ -3,7 +3,7 @@
         <div class="row" >
             <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
                 <div class="card card-register form">
-                    <h3 class="title">Bienvenue</h3>
+                    <h3 class="title">Bienvenue </h3>
                     <div class="social-line text-center">
                         <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                             <i class="fa fa-facebook-square"></i>
@@ -15,15 +15,16 @@
                             <i class="fa fa-twitter"></i>
                         </a>
                     </div>
-                    <form class="register-form">
-                        <label>Email</label>
+                    <form class="register" [formGroup]="userForm" (ngSubmit)="userSubmit()" ng-model="successMessage" ng-show="isSuccess">
+                        <label>Login</label>
                         <div class="input-group form-group-no-border" >
                           <div class="input-group-prepend">
                             <span class="input-group-text">
                                 <i class="nc-icon nc-email-85"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Email" >
+
+                            <input type="text" class="form-control" placeholder="Login" name="login"  >
                         </div>
                         <label>Mot de passe</label>
                         <div class="input-group form-group-no-border" >
@@ -32,11 +33,17 @@
                                 <i class="nc-icon nc-key-25"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Mot de passe"  required>
+                            <input type="text" class="form-control" placeholder="Mot de passe" name="password">
                         </div>
-                        <button class="btn btn-danger btn-block btn-round page-scroll" routerLink="../home-agent" >Se connecter</button>
+                        <button type="submit" name="valider" class="btn btn-danger btn-block btn-round page-scroll"  >Se connecter</button>
                     </form>
                 </div>
+                <div  *ngIf="showMsg==2">
+                    <div>
+                      <p style="background-color: #333;color: #facd1bb4;margin-top: 10px;height: auto;">
+                          <strong>Echec de la connexion</strong>.
+                      </p>
+                    </div>
                 <div class="col text-center" routerLinkActive="active">
                     
                 </div>

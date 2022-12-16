@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -30,6 +33,7 @@ import { AdminComponent } from './admin/admin.component';
     HomeAgentComponent,
     TransactionComponent,
     AdminComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,13 @@ import { AdminComponent } from './admin/admin.component';
     MatGridListModule,
     MatInputModule,
     MatExpansionModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatTabsModule,
+
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
