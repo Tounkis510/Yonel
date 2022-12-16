@@ -12,7 +12,11 @@ import { HomeComponent } from './home/home.component';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AdminComponent } from './admin/admin.component';
+<<<<<<< HEAD
+import {EnvoieComponent} from './envoie/envoie.component';
+=======
 import { PaiementComponent } from './paiement/paiement.component';
+>>>>>>> 9fa34589fa4948d8ea33aa958c9d8aa60349b3a0
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +29,8 @@ const routes: Routes =[
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent }
+    { path: 'nucleoicons',      component: NucleoiconsComponent },
+    { path: 'envoyer',          component: EnvoieComponent}
 ];
 
 @NgModule({
