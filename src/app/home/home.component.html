@@ -15,7 +15,7 @@
                             <i class="fa fa-twitter"></i>
                         </a>
                     </div>
-                    <form class="register" [formGroup]="userForm" (ngSubmit)="userSubmit()" ng-model="successMessage" ng-show="isSuccess">
+                    <form class="register" ng-model="successMessage" ng-show="isSuccess">
                         <label>Login</label>
                         <div class="input-group form-group-no-border" >
                           <div class="input-group-prepend">
@@ -35,7 +35,7 @@
                           </div>
                             <input type="text" class="form-control" placeholder="Mot de passe" name="password">
                         </div>
-                        <button type="submit" name="valider" class="btn btn-danger btn-block btn-round page-scroll"  >Se connecter</button>
+                        <button type="submit" name="valider" class="btn btn-danger btn-block btn-round page-scroll" routerLink="../home-agent"  >Se connecter</button>
                     </form>
                 </div>
                 <div  *ngIf="showMsg==2">

@@ -8,6 +8,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AdminComponent } from './admin/admin.component';
+import { EnvoieComponent } from './envoie/envoie.component';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { AdminComponent } from './admin/admin.component';
     HomeAgentComponent,
     TransactionComponent,
     AdminComponent,
+    EnvoieComponent,
     
   ],
   imports: [
@@ -50,6 +53,7 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTabsModule,
+    MatSelectModule,
 
   ],
   providers: [
