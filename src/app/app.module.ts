@@ -23,7 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeAgentComponent } from './home-agent/home-agent.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AdminComponent } from './admin/admin.component';
+<<<<<<< HEAD
 import { EnvoieComponent } from './envoie/envoie.component';
+=======
+import { PaiementComponent } from './paiement/paiement.component';
+>>>>>>> 9fa34589fa4948d8ea33aa958c9d8aa60349b3a0
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { EnvoieComponent } from './envoie/envoie.component';
     HomeAgentComponent,
     TransactionComponent,
     AdminComponent,
+<<<<<<< HEAD
     EnvoieComponent,
+=======
+    PaiementComponent,
+>>>>>>> 9fa34589fa4948d8ea33aa958c9d8aa60349b3a0
     
   ],
   imports: [

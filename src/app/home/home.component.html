@@ -24,7 +24,7 @@
                             </span>
                           </div>
 
-                            <input type="text" class="form-control" placeholder="Login" name="login"  >
+                            <input type="text" class="form-control" placeholder="Login" name="login" formControlName="login"  >
                         </div>
                         <label>Mot de passe</label>
                         <div class="input-group form-group-no-border" >
@@ -33,17 +33,11 @@
                                 <i class="nc-icon nc-key-25"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Mot de passe" name="password">
+                            <input type="text" class="form-control" placeholder="Mot de passe" name="mdp" formControlName="mdp">
                         </div>
                         <button type="submit" name="valider" class="btn btn-danger btn-block btn-round page-scroll" routerLink="../home-agent"  >Se connecter</button>
                     </form>
                 </div>
-                <div  *ngIf="showMsg==2">
-                    <div>
-                      <p style="background-color: #333;color: #facd1bb4;margin-top: 10px;height: auto;">
-                          <strong>Echec de la connexion</strong>.
-                      </p>
-                    </div>
                 <div class="col text-center" routerLinkActive="active">
                     
                 </div>

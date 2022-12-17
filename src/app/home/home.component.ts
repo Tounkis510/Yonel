@@ -12,25 +12,31 @@ export class HomeComponent implements OnInit {
   readDataUser: any;
   User: any;
   showMsg: number;
-  mdp:any='tks'
-  login:any='BT'
+  mdp:any='tks';
+  login:any='BT';
+  n: number=2;
+  id: any;
 
   constructor(private service: UserService ) { }
 
   ngOnInit(): void {
-    this.service.getAllUsers().subscribe((res)=>{
-      console.log(res,'res==>');
-      this.readDataUser=res.data;
-      
-    });
   }
+<<<<<<< HEAD
   // userForm = new FormGroup({
   //   'login':new FormControl('',Validators.required),
   //    'password':new FormControl('',Validators.required),
   //  });
+=======
+  
+  userForm = new FormGroup({
+    'login':new FormControl('',Validators.required),
+     'mdp':new FormControl('',Validators.required),
+   });
+>>>>>>> 9fa34589fa4948d8ea33aa958c9d8aa60349b3a0
  
   //  userSubmit(){  
      
+<<<<<<< HEAD
   //    this.service.Connect(this.userForm.value).subscribe((res)=>{
   //      console.log(res,'res==>');
   //      var id=res.data[0].idUser;
@@ -41,6 +47,19 @@ export class HomeComponent implements OnInit {
   //      window.location.href="http://localhost:4200/#/home-agent";
   //    });
   //   }
+=======
+     this.service.Connect(this.userForm.value).subscribe((res)=>{
+       console.log(res,'res==>');
+       console.log(this.userForm.value)
+       this.id=res.data[0].id
+       if(this.id==100){
+        window.location.href="http://localhost:4200/#/admin";
+       }else{
+        window.location.href="http://localhost:4200/#/home-agent";
+       }
+     });
+    }
+>>>>>>> 9fa34589fa4948d8ea33aa958c9d8aa60349b3a0
 
  
 

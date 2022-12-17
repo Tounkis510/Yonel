@@ -1,0 +1,20 @@
+<div class="section section-image section-login" style="background-image: url('assets/img/Fond (2).jpg');">
+    <div class="container title titre">
+        <div class="cont"></div>
+        <div class="transaction">
+    <form [formGroup]="userForm" (ngSubmit)="userSubmit()" ng-model="successMessage" ng-show="isSuccess">
+        <label class="titres"> Date de Paiement</label>
+        <input formControlName="date_paiement" type="date" class="form-control input" placeholder="Renseigner la date de paiement">
+
+        <label class="titres">Numéro d'identfication</label>
+        <input formControlName="numero_piece" type="number" class="form-control input" placeholder="Renseigner le CNI">
+
+        <label class="titres">Nom du recepteur</label>
+        <input formControlName="nom_recepteur" type="text" class="form-control input" placeholder="Renseigner le nom du recepteur">
+
+        <button type="submit" class="btn btn-danger bouton" >Valider</button>
+    </form>    
+    </div>
+        
+    </div>
+</div>
